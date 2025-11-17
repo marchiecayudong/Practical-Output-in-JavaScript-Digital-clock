@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Digital Clock & Countdown Timer — Colorful UI</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app">
+  <!-- LEFT: Clocks -->
+  <section class="card left">
+    <div class="top">
+      <div class="title">
+        <div class="logo">DT</div>
+        <div>
+          <h1>Digital Clock & Timer</h1>
+          <p class="lead">Stylish clock + countdown — responsive & colorful</p>
+        </div>
+      </div>
+
+      <div class="options small-muted">
+        <label class="toggle"><input id="themeToggle" type="checkbox" /> Light</label>
+        <label class="toggle"><input id="hourToggle" type="checkbox" /> 24h</label>
+   	
+        <input id="accentPicker" class="color-input" type="color" value="#7c5cff" />
+      </div>
+    </div>
+
+    <div class="clocks">
+      <div class="digital glow card" aria-live="polite">
+        <div style="display:flex;width:100%;align-items:center;gap:12px;">
+          <div class="time" id="digitalTime">--:--:--</div>
+          <div class="tz small muted" id="tzName"></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;width:100%;">
+          <div class="small-muted">Date: <span id="dateStr">—</span></div>
+          <div style="margin-left:auto" class="small-muted">
+            Zone: <span id="offsetStr">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="analog card">
+        <div class="dial" id="dial">
+          <div class="hand hour" id="hHand"></div>
+          <div class="hand min" id="mHand"></div>
+          <div class="hand sec" id="sHand"></div>
+          <div class="center-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIGHT: Countdown Timer -->
+  <aside class="card right">
+    <div class="header">
+      <div>
+        <div style="font-weight:700">Countdown Timer</div>
+        <div class="small-muted">
+          Enter a duration (HH:MM:SS) or choose a target date/time
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn ghost" id="preset1">+1m</button>
+        <button class="btn ghost" id="preset5">+5m</button>
+        <button class="btn ghost" id="preset10">+10m</button>
+        <button class="btn ghost" id="preset60">+1h</button>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <input id="durationInput" class="input" placeholder="00:05:00 or 5:00" />
+      <input id="dateInput" class="input" type="datetime-local" />
+    </div>
+
+    <div class="count-display">
+      <div>
+        <div class="small-muted">Remaining</div>
+        <div class="countdown-time" id="countdown">--:--:--</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="startBtn">Start</button>
+          <button class="btn ghost" id="pauseBtn">Pause</button>
+          <button class="btn ghost" id="resetBtn">Reset</button>
+        </div>
+        <label class="small-muted" style="display:flex;gap:8px;align-items:center">
+          <input type="checkbox" id="soundToggle" checked /> Sound
+        </label>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <label class="small-muted">Speed adjust:</label>
+      <button class="btn ghost" id="minus10">-10s</button>
+      <button class="btn ghost" id="plus10">+10s</button>
+    </div>
+
+    <div class="footer-note">
+      Tip: you can type "1:30" or "01:30:00" into duration field.
+    </div>
+  </aside>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

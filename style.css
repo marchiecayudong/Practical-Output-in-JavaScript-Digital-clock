@@ -1,0 +1,233 @@
+/* ---------- ROOT THEME ---------- */
+:root {
+  --bg: #0d0d14;
+  --card: rgba(255, 255, 255, 0.06);
+  --text: #ffffff;
+  --muted: #999;
+  --accent: #7c5cff;
+  --glow: rgba(124, 92, 255, 0.7);
+}
+
+.light {
+  --bg: #fbfbfb;
+  --card: rgba(0, 0, 0, 0.06);
+  --text: #111;
+  --muted: #555;
+  --accent: #7c5cff;
+  --glow: rgba(124, 92, 255, 0.5);
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 100vh;
+}
+
+.app {
+  width: 95%;
+  max-width: 1200px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  padding: 20px;
+  background: var(--card);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.left {
+  flex: 1;
+  min-width: 350px;
+}
+
+.right {
+  width: 380px;
+  min-width: 320px;
+}
+
+/* ---------- TITLES ---------- */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  background: var(--accent);
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 22px;
+  color: white;
+}
+
+.lead {
+  margin-top: -8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- OPTIONS ---------- */
+.options {
+  margin-top: 15px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.color-input {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ---------- DIGITAL CLOCK ---------- */
+.digital {
+  margin-top: 20px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.time {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tz {
+  font-size: 14px;
+}
+
+.small-muted {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- ANALOG CLOCK ---------- */
+.analog {
+  margin-top: 20px;
+}
+
+.dial {
+  margin: auto;
+  margin-top: 12px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  position: relative;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 8px;
+}
+
+.hand.hour {
+  height: 55px;
+  width: 6px;
+  background: var(--accent);
+}
+.hand.min {
+  height: 75px;
+  width: 4px;
+  background: var(--accent);
+}
+.hand.sec {
+  height: 90px;
+  width: 2px;
+  background: red;
+}
+
+.center-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  top: calc(50% - 7px);
+  left: calc(50% - 7px);
+}
+
+/* ---------- TIMER ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+}
+
+.count-display {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.countdown-time {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.footer-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
